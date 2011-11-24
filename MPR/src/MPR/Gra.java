@@ -30,7 +30,4 @@ public class Gra {
 	public void setCena(String cena) {
 		this.cena = cena;
 	}
-
-
-
 }

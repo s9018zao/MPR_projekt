@@ -2,7 +2,6 @@
 
 <project name="MPR" default="dist" basedir=".">
 
-
 <property name="src" location="src"/>
 <property name="build" location="build"/>
 <property name="dist" location="dist"/>

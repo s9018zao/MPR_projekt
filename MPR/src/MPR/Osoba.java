@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Osoba {
 	
-		
+	
 		 String imie;
 		 String nazwisko;
 		 		 
@@ -27,8 +27,7 @@ public class Osoba {
 			 System.out.println("Gazety i czasopisma :");
 	         for (Gazeta g : Gazety)
 	                 g.wypiszGazeta();
-	         System.out.println("");
-	         
+	         System.out.println("");       
 	 }
 		
 		 public void wypiszKsiazki() {

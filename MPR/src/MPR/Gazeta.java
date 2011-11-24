@@ -1,5 +1,6 @@
 package MPR;
 
+
 public class Gazeta {
 	
 	String tytul;
@@ -14,7 +15,7 @@ public class Gazeta {
 	public void wypiszGazeta() {
 	System.out.println("Nazwa: " + this.tytul + "\nCena: " + this.cena);
 	}
-
+    
 	public String getTytul() {
 		return tytul;
 	}
