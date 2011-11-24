@@ -32,9 +32,6 @@ public class Main  {
      pierwsza.wypiszGazety();
      pierwsza.wypiszGry();
      
-     pierwsza.znajdzKiazki("Sienkiewicz");
-     pierwsza.szukajGazety("Polityka");
-     pierwsza.pokazGre("Fifa 2011");
      
      pierwsza.usunKsiazka("Sienkiewicz");
      pierwsza.usunGazeta("Polityka");

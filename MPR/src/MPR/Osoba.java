@@ -12,6 +12,8 @@ public class Osoba {
 		 List<Gazeta> Gazety = new ArrayList<Gazeta>();
 		 List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
 		 List<Gra> Gry = new ArrayList<Gra>();
+		
+		 
 		 
 		 public Osoba (String imie, String nazwisko, List<Ksiazka> Ksiazki , List<Gazeta> Gazety, List<Gra> Gry ) {
 			 
@@ -73,14 +75,6 @@ public class Osoba {
 			 
 			 }
 		 
-		 public void znajdzKiazki(String autor) {
-				
-			 System.out.println("Znaleziono ksiażke: " + znajdz(autor).getAutor()+ " znajduje się na pozycji : " + Ksiazki.indexOf(znajdz(autor)));
-			 
-		 }
-		 
-		 
-		 
 		 
 		 public Gazeta szukaj (String tytul) {
 			 for (Gazeta g : Gazety) {
@@ -91,14 +85,9 @@ public class Osoba {
 			 return szukaj (tytul);
 			 } 
 		 
-		 public void szukajGazety(String tytul) {
-				
-			 System.out.println("Znaleziono gazetę: " + szukaj(tytul).getTytul()+ " znajduje się na pozycji : " + Gazety.indexOf(szukaj(tytul)));
 			 
-		 }
-		 
-		 
 		 public Gra pokaz (String nazwa) {
+			 
 			 for (Gra g : Gry) {
 			 if (g.getNazwa().equals(nazwa)) {
 			 return g;
@@ -106,12 +95,8 @@ public class Osoba {
 			          }
 			 return pokaz (nazwa);
 			 }
-		 
-		 public void pokazGre(String nazwa) {
-				
-			 System.out.println("Znaleziono Grę : " + pokaz(nazwa).getNazwa()+ " znajduje się na pozycji : " + Gry.indexOf(pokaz(nazwa)));
-			 
-		 }
+		
+						 
 		 
 		 public void zmienGazete(String tytul, String nowaCena) {
 			 
