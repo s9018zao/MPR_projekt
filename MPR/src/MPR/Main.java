@@ -8,12 +8,9 @@ public class Main  {
 
 public static void main(String[] args) {
 	
-	
-	
 	List<Gazeta> Gazety = new ArrayList<Gazeta>();
 	List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
-	List<Gra> Gry = new ArrayList<Gra>();
-	
+	List<Gra> Gry = new ArrayList<Gra>();	
 	
 	 Osoba pierwsza = new Osoba("Jan", "Kowalski", Ksiazki , Gazety, Gry);
 	
@@ -30,8 +27,7 @@ public static void main(String[] args) {
 	 pierwsza.dodajGry("Europa Universalis III", "59.00");
 	 pierwsza.dodajGry("Fifa 2011", "79.00");
 	 pierwsza.dodajGry("Civilization V", "109.00");
-	 pierwsza.dodajGry("Call of Duty", "59.00");
-	 
+	 pierwsza.dodajGry("Call of Duty", "59.00");	 
 	 
 	 pierwsza.wypiszKsiazki();
      pierwsza.wypiszGazety();
@@ -50,8 +46,7 @@ public static void main(String[] args) {
      pierwsza.wypiszKsiazki();
      pierwsza.wypiszGazety();
      pierwsza.wypiszGry();
-     
-     
+         
      pierwsza.zmienGazete("Wprost", "4.00");
      pierwsza.wypiszGazety();
      
