@@ -19,7 +19,7 @@ public class Main  {
 	 pierwsza.dodajGazety("Polityka", "4.00");
 	 
 	 pierwsza.dodajKsiazki("Potop","Sienkiewicz", "39.00");
-	 pierwsza.dodajKsiazki("Ferdydurke","Gombrowicz", "53.00");
+	 pierwsza.dodajKsiazki("Ogniem i meczem","Sienkiewicz", "53.00");
 	 pierwsza.dodajKsiazki("Fabryka oficerów","Kirst", "37.00");
 	 pierwsza.dodajKsiazki("Czas pogardy","Sapkowski", "33.00");
 	 
@@ -33,7 +33,7 @@ public class Main  {
      pierwsza.wypiszGry();
      
      
-     pierwsza.usunKsiazka("Sienkiewicz");
+     pierwsza.usunKsiazka("Kirst");
      pierwsza.usunGazeta("Polityka");
      pierwsza.usunGra("Call of Duty");
      
@@ -51,6 +51,11 @@ public class Main  {
      
      pierwsza.zmienGre("Fifa 2011", "59.00");
      pierwsza.wypiszGry();
+     
+     pierwsza.SzukajAutora("Sienkiewicz");
+     
+     
+     
 }
 }
 

@@ -64,26 +64,25 @@ public class Osoba {
 		 
 		 public Ksiazka znajdz (String autor) {
 			 
-			 
-			 for (Ksiazka g : Ksiazki) {
-			 if (g.getAutor().equals(autor)) {
-			 return g;
-		                    }
-			 
-			          }
-			 return znajdz (autor);
-			 
+			  for (Ksiazka g : Ksiazki) {
+			      if (g.getAutor().equals(autor)) {
+		          return g;
+		          }
 			 }
+		  return znajdz (autor);
+		  }
 		 
 		 
 		 public Gazeta szukaj (String tytul) {
+			
 			 for (Gazeta g : Gazety) {
 			 if (g.getTytul().equals(tytul)) {
-			 return g;
-		                    }
-			          }
+				 
+			return g;
+		          }
+			     }
 			 return szukaj (tytul);
-			 } 
+		 		} 
 		 
 			 
 		 public Gra pokaz (String nazwa) {
@@ -96,6 +95,21 @@ public class Osoba {
 			 return pokaz (nazwa);
 			 }
 		
+		 List<Ksiazka> SzukajAutora (String autor){
+			 
+			 List<Ksiazka> wyszukane = new ArrayList<Ksiazka>();
+			    for (Ksiazka k : Ksiazki)
+			      if(k.getAutor().equals(autor)){
+			      k.wypiszKsiazka();
+			    wyszukane.add(k);
+			 
+			 }
+			 
+			 return wyszukane ; 
+			 
+		}
+		 
+		 
 						 
 		 
 		 public void zmienGazete(String tytul, String nowaCena) {
