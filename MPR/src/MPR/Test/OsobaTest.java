@@ -2,12 +2,36 @@ package MPR.Test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
+import MPR.Gazeta;
+import MPR.Gra;
+import MPR.Ksiazka;
+import MPR.Osoba;
+
 public class OsobaTest {
+	
+	 String imie;
+	 String nazwisko;
+	 		 
+	 List<Gazeta> Gazety = new ArrayList<Gazeta>();
+	 List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
+	 List<Gra> Gry = new ArrayList<Gra>();
+	
+	 
+	
+	Osoba nowa = new Osoba("Adam", "Adamski", Ksiazki, Gazety, Gry);
+	// Osoba nowa = new Osoba("Jan", "Jankowski", Ksiazki , Gazety, Gry);
+	 
+		
 
 	@Test
 	public void testOsoba() {
+		
+		
 		fail("Not yet implemented");
 	}
 
