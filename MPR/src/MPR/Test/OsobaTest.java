@@ -17,19 +17,21 @@ public class OsobaTest {
 	 String imie;
 	 String nazwisko;
 	 		 
-	 List<Gazeta> Gazety = new ArrayList<Gazeta>();
-	 List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
-	 List<Gra> Gry = new ArrayList<Gra>();
+	 private static List<Gazeta> Gazety = new ArrayList<Gazeta>();
+	 private static List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
+	 private static List<Gra> Gry = new ArrayList<Gra>();
 	
 	 
 	
-	Osoba nowa = new Osoba("Adam", "Adamski", Ksiazki, Gazety, Gry);
+	private static Osoba nowa = new Osoba("Adam", "Adamski", Ksiazki, Gazety, Gry);
 	// Osoba nowa = new Osoba("Jan", "Jankowski", Ksiazki , Gazety, Gry);
 	 
 		
 
 	@Test
 	public void testOsoba() {
+		
+		assertTrue("nie dodalo osoby" + nowa.getimie().equals("Adam"));
 		
 		
 		fail("Not yet implemented");
