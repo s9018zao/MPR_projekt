@@ -28,30 +28,22 @@ public class Main  {
 	 pierwsza.dodajGry("Civilization V", "109.00");
 	 pierwsza.dodajGry("Call of Duty", "59.00");	 
 	 
-	 pierwsza.wypiszKsiazki();
-     pierwsza.wypiszGazety();
-     pierwsza.wypiszGry();
+	 pierwsza.wypiszWszystko();
      
-     
+	 System.out.println("**********Wypisanie list po usunięciu elementów**********");
      pierwsza.usunKsiazka("Kirst");
      pierwsza.usunGazeta("Polityka");
      pierwsza.usunGra("Call of Duty");
-     
-     System.out.println("*********************************");
     		 
-     pierwsza.wypiszKsiazki();
-     pierwsza.wypiszGazety();
-     pierwsza.wypiszGry();
-         
+     pierwsza.wypiszWszystko();
+     
+     System.out.println("**************Zmiana ceny gazety***********");    
      pierwsza.zmienGazete("Wprost", "4.00");
-     pierwsza.wypiszGazety();
-     
+     System.out.println("********Zmiana tytułu książki************");
      pierwsza.zmienKsiazke("Krew elfów", "Sapkowski", "33.00");
-     pierwsza.wypiszKsiazki();
-     
+     System.out.println("*********Zmiana tytułu gry***************");
      pierwsza.zmienGre("Fifa 2011", "59.00");
-     pierwsza.wypiszGry();
-     
+     System.out.println("***Wyszukanie więcej niż jednej książki danego autora****");
      pierwsza.SzukajAutora("Sienkiewicz");
      
      

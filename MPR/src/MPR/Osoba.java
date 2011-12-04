@@ -1,53 +1,53 @@
 package MPR;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 public class Osoba {
 	
 	
-		 String imie;
-		 String nazwisko;
+		 String Imie;
+		 String Nazwisko;
 		 		 
-		 List<Gazeta> Gazety = new ArrayList<Gazeta>();
-		 List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
-		 List<Gra> Gry = new ArrayList<Gra>();
+		public List<Gazeta> Gazety = new ArrayList<Gazeta>();
+		public List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
+		public List<Gra> Gry = new ArrayList<Gra>();
 		
 		 
 		 
 		 public Osoba (String imie, String nazwisko, List<Ksiazka> Ksiazki , List<Gazeta> Gazety, List<Gra> Gry ) {
 			 
-			 this.imie = imie;
-			 this.nazwisko = nazwisko;
+			 this.Imie = imie;
+			 this.Nazwisko = nazwisko;
 			 
 			 this.Gazety = Gazety;
 			 this.Ksiazki = Ksiazki;
 			 this.Gry = Gry;
 			  }
 		 
-		 public void wypiszGazety() {
-			 System.out.println("Gazety i czasopisma :");
-	         for (Gazeta g : Gazety)
-	                 g.wypiszGazeta();
-	         System.out.println("");       
-	 }
 		
-		 public void wypiszKsiazki() {
-			 System.out.println("Klient  :" + imie + " " + nazwisko);
+		 public void wypiszWszystko(){
+			 
 			 System.out.println(""); 
 			 System.out.println("Książki :");
 	         for (Ksiazka k : Ksiazki)
 	                 k.wypiszKsiazka();
 	         System.out.println(""); 
-	}
-		 
-		 public void wypiszGry() {
+	        		 
+	         System.out.println("Gazety i czasopisma :");
+	    	 for (Gazeta G : Gazety)
+	    	           G.wypiszGazeta();
+	    	  System.out.println("");
+			 
 			 System.out.println("Gry:");
 	         for (Gra g : Gry)
 	                 g.wypiszGra();
 	         System.out.println("" );
-	}
-		
+			 
+			 
+			 
+		 }
 		 public void dodajKsiazki(String tytul, String autor, String cena)  {
 			 Ksiazki.add(new Ksiazka(tytul, autor, cena));
 			
@@ -64,38 +64,38 @@ public class Osoba {
 		 
 		 public Ksiazka znajdz (String autor) {
 			 
-			  for (Ksiazka g : Ksiazki) {
-			      if (g.getAutor().equals(autor)) {
-		          return g;
+			  for (Ksiazka Autor : Ksiazki) {
+			      if (Autor.getAutor().equals(autor)) {
+		          return Autor;
 		          }
 			 }
-		  return znajdz (autor);
+		  return null;
 		  }
 		 
 		 
 		 public Gazeta szukaj (String tytul) {
 			
-			 for (Gazeta g : Gazety) {
-			 if (g.getTytul().equals(tytul)) {
+			 for (Gazeta Tytul : Gazety) {
+			 if (Tytul.getTytul().equals(tytul)) {
 				 
-			return g;
+			return Tytul;
 		          }
 			     }
-			 return szukaj (tytul);
+			 return null;
 		 		} 
 		 
 			 
 		 public Gra pokaz (String nazwa) {
 			 
-			 for (Gra g : Gry) {
-			 if (g.getNazwa().equals(nazwa)) {
-			 return g;
+			 for (Gra Nazwa : Gry) {
+			 if (Nazwa.getNazwa().equals(nazwa)) {
+			 return Nazwa;
 		                    }
 			          }
-			 return pokaz (nazwa);
+			 return null;
 			 }
 		
-		 List<Ksiazka> SzukajAutora (String autor){
+		 public List<Ksiazka> SzukajAutora (String autor){
 			 
 			 List<Ksiazka> wyszukane = new ArrayList<Ksiazka>();
 			    for (Ksiazka k : Ksiazki)
@@ -116,6 +116,7 @@ public class Osoba {
 			 
 		     szukaj(tytul).getCena();
 			 Gazety.set(Gazety.indexOf(szukaj(tytul)), new Gazeta(tytul, nowaCena));
+			 szukaj(tytul).wypiszGazeta();
 		 }
 			 
 		 
@@ -123,13 +124,15 @@ public class Osoba {
 			 
 		     znajdz (autor).getTytul();
 			 Ksiazki.set(Ksiazki.indexOf(znajdz (autor)), new Ksiazka(nowyTytul, autor, cena));
-		 }
+		     znajdz(autor).wypiszKsiazka();
+	     }
 		 
 
 		 public void zmienGre(String nazwa, String nowaCena) {
 			 
-		     pokaz (nazwa).getCena();
+		     pokaz(nazwa).getCena();
 			 Gry.set(Gry.indexOf(pokaz (nazwa)), new Gra(nazwa,  nowaCena));
+			 pokaz(nazwa).wypiszGra();
 		 }
 		 
 		 

@@ -2,9 +2,13 @@ package MPR.Test;
 
 import static org.junit.Assert.*;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import MPR.Gazeta;
@@ -14,107 +18,178 @@ import MPR.Osoba;
 
 public class OsobaTest {
 	
-	 String imie;
-	 String nazwisko;
-	 		 
-	 private static List<Gazeta> Gazety = new ArrayList<Gazeta>();
-	 private static List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
-	 private static List<Gra> Gry = new ArrayList<Gra>();
-	
+	 String Imie;
+	 String Nazwisko;
 	 
+	 List<Gazeta> Gazety = new ArrayList<Gazeta>();
+	 List<Ksiazka> Ksiazki = new ArrayList<Ksiazka>();
+	 List<Gra> Gry = new ArrayList<Gra>();
+
+	 	
+	 Osoba Test = new Osoba("imie", "nazwisko", Ksiazki, Gazety, Gry);
 	
-	private static Osoba nowa = new Osoba("Adam", "Adamski", Ksiazki, Gazety, Gry);
-	// Osoba nowa = new Osoba("Jan", "Jankowski", Ksiazki , Gazety, Gry);
+			 		 
 	 
+	@Before
+	public void setUp() throws Exception {
 		
+			 		 
+		
+		 Gazety.add(new Gazeta("gazeta1", "cena1"));
+		 Gazety.add(new Gazeta("gazeta2", "cena2"));
+		 Gazety.add(new Gazeta("gazeta3", "cena3"));
+		 Gazety.add(new Gazeta("gazeta4", "cena4"));
+		 
+		 Ksiazki.add(new Ksiazka("ksiazka1","autor1","cena1"));
+		 Ksiazki.add(new Ksiazka("ksiazka2","autor1","cena2"));
+		 Ksiazki.add(new Ksiazka("ksiazka3","autor2","cena3"));
+		 Ksiazki.add(new Ksiazka("ksiazka4","autor3","cena4"));
+		 
+		 Gry.add(new Gra("gra1", "cena1"));
+		 Gry.add(new Gra("gra2", "cena2"));
+		 Gry.add(new Gra("gra3", "cena3"));
+		 Gry.add(new Gra("gra4", "cena4"));
+		  
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	} 
 
 	@Test
 	public void testOsoba() {
 		
-		assertTrue("nie dodalo osoby" + nowa.getimie().equals("Adam"));
+		Osoba Test1 = new Osoba("imie1", "nazwisko1", Ksiazki, Gazety, Gry);
 		
+		assertNotNull(Test);
+		assertNotNull(Gazety);
 		
-		fail("Not yet implemented");
-	}
+		assertNotSame("imie", Test, Test1);
+		assertNotSame("nazwisko",Test , Test1);
+		assertEquals(Test.Ksiazki, Test1.Ksiazki);
+		}
 
-	@Test
-	public void testWypiszGazety() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWypiszKsiazki() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWypiszGry() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	public void testDodajKsiazki() {
-		fail("Not yet implemented");
+		 
+		assertFalse(Ksiazki.size() == 1);
+		assertTrue(Ksiazki.size() == 4);
+		
 	}
 
 	@Test
 	public void testDodajGazety() {
-		fail("Not yet implemented");
+		
+		assertFalse(Gazety.size() == 2);
+		assertTrue(Gazety.size() == 4);
+		
+		
 	}
 
 	@Test
 	public void testDodajGry() {
-		fail("Not yet implemented");
+		
+		assertFalse(Gry.size() == 0);
+		assertTrue(Gry.size() == 4);
+		
 	}
 
 	@Test
 	public void testZnajdz() {
-		fail("Not yet implemented");
+		
+		assertNotNull(Test.znajdz("autor2"));
+		assertNull(Test.znajdz("autor"));
+	
 	}
-
 	@Test
 	public void testSzukaj() {
-		fail("Not yet implemented");
+		
+		assertNotNull(Test.szukaj("gazeta3"));
+		assertNull(Test.szukaj("gazeta"));
 	}
 
 	@Test
 	public void testPokaz() {
-		fail("Not yet implemented");
+		
+		assertNotNull(Test.pokaz("gra1"));
+		assertNull(Test.pokaz("gra"));
 	}
 
 	@Test
-	public void testSzukajAutora() {
-		fail("Not yet implemented");
+	public void testSzukajAutora() {	
+			
+		assertNotNull(Test.SzukajAutora("autor2"));
+		assertTrue(Test.SzukajAutora("autor1").size()==2);
+		assertFalse(Test.SzukajAutora("autor1").size()==5);
+		
+		
 	}
 
 	@Test
 	public void testZmienGazete() {
-		fail("Not yet implemented");
+		
+		Test.zmienGazete("gazeta2", "cena02");
+		
+		assertNotNull(Test.szukaj("gazeta2").getCena());
+		assertTrue(Test.szukaj("gazeta2").getCena().equals("cena02"));
+		assertFalse(Test.szukaj("gazeta2").getCena().equals("cena22"));
+		
 	}
 
 	@Test
 	public void testZmienKsiazke() {
-		fail("Not yet implemented");
+		
+		Test.zmienKsiazke("tytul04","autor3","cena4");
+		
+		assertNull(Test.znajdz("autor5"));
+		assertTrue(Test.znajdz("autor3").getTytul().equals("tytul04"));
+		assertFalse(Test.znajdz("autor3").getTytul().equals("tytul44"));
+		
+		
 	}
 
 	@Test
 	public void testZmienGre() {
-		fail("Not yet implemented");
+		
+        Test.zmienGre("gra1", "cena01");
+		
+		assertNotNull(Test.pokaz("gra1").getCena());
+		assertTrue(Test.pokaz("gra1").getCena().equals("cena01"));
+		assertFalse(Test.pokaz("gra1").getCena().equals("cena11"));
+		
 	}
 
 	@Test
 	public void testUsunKsiazka() {
-		fail("Not yet implemented");
+		
+		Test.usunKsiazka("autor3");
+		
+		assertNull(Test.znajdz("autor3"));
+		assertTrue(Ksiazki.size() == 3);
 	}
 
 	@Test
 	public void testUsunGazeta() {
-		fail("Not yet implemented");
+		
+		Test.usunGazeta("gazeta1");
+		
+		assertNull(Test.szukaj("gazeta1"));
+		assertNotNull(Test.szukaj("gazeta2"));
+		assertTrue(Gazety.size() == 3);
+		
 	}
 
 	@Test
 	public void testUsunGra() {
-		fail("Not yet implemented");
+		
+		Test.usunGra("gra4");
+		Test.usunGra("gra3");
+		
+		assertTrue(Gry.size() == 2);
+		assertFalse(Gry.size() == 3);
+		assertNull(Test.pokaz("gra3"));
+		
 	}
 
 }

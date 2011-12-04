@@ -25,7 +25,7 @@ public class Ksiazka {
 			this.tytul = tytul;
 		}
 
-		public String getAutor() {
+		public  String getAutor() {
 			return autor;
 		}
 
