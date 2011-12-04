@@ -152,7 +152,7 @@ public class OsobaTest {
 	@Test
 	public void testZmienGre() {
 		
-        Test.zmienGre("gra1", "cena01");
+                Test.zmienGre("gra1", "cena01");
 		
 		assertNotNull(Test.pokaz("gra1").getCena());
 		assertTrue(Test.pokaz("gra1").getCena().equals("cena01"));
