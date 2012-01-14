@@ -31,9 +31,10 @@ public class Main  {
 	 pierwsza.wypiszWszystko();
      
 	 System.out.println("**********Wypisanie list po usunięciu elementów**********");
-     pierwsza.usunKsiazka("Kirst");
-     pierwsza.usunGazeta("Polityka");
-     pierwsza.usunGra("Call of Duty");
+     pierwsza.znajdzKsiazke("Kirst");
+     pierwsza.znajdzGazete("Polityka");
+     //pierwsza.usunGra("Call of Duty");
+     pierwsza.znajdzGre("Call of Duty");
     		 
      pierwsza.wypiszWszystko();
      

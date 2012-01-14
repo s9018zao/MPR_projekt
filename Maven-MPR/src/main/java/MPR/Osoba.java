@@ -62,7 +62,7 @@ public class Osoba {
 			
 			 }
 		 
-		 public Ksiazka znajdz (String autor) {
+		 public Ksiazka znajdzKsiazke (String autor) {
 			 
 			  for (Ksiazka Autor : Ksiazki) {
 			      if (Autor.getAutor().equals(autor)) {
@@ -73,7 +73,7 @@ public class Osoba {
 		  }
 		 
 		 
-		 public Gazeta szukaj (String tytul) {
+		 public Gazeta znajdzGazete (String tytul) {
 			
 			 for (Gazeta Tytul : Gazety) {
 			 if (Tytul.getTytul().equals(tytul)) {
@@ -85,7 +85,7 @@ public class Osoba {
 		 		} 
 		 
 			 
-		 public Gra pokaz (String nazwa) {
+		 public Gra znajdzGre (String nazwa) {
 			 
 			 for (Gra Nazwa : Gry) {
 			 if (Nazwa.getNazwa().equals(nazwa)) {
@@ -114,30 +114,31 @@ public class Osoba {
 		 
 		 public void zmienGazete(String tytul, String nowaCena) {
 			 
-		     szukaj(tytul).getCena();
-			 Gazety.set(Gazety.indexOf(szukaj(tytul)), new Gazeta(tytul, nowaCena));
-			 szukaj(tytul).wypiszGazeta();
+		     znajdzGazete(tytul).getCena();
+			 Gazety.set(Gazety.indexOf(znajdzGazete(tytul)), new Gazeta(tytul, nowaCena));
+			 znajdzGazete(tytul).wypiszGazeta();
 		 }
 			 
 		 
 	     public void zmienKsiazke(String nowyTytul, String autor, String cena) {
 			 
-		     znajdz (autor).getTytul();
-			 Ksiazki.set(Ksiazki.indexOf(znajdz (autor)), new Ksiazka(nowyTytul, autor, cena));
-		     znajdz(autor).wypiszKsiazka();
+		     znajdzKsiazke (autor).getTytul();
+			 Ksiazki.set(Ksiazki.indexOf(znajdzKsiazke (autor)), new Ksiazka(nowyTytul, autor, cena));
+		     znajdzKsiazke(autor).wypiszKsiazka();
 	     }
 		 
 
 		 public void zmienGre(String nazwa, String nowaCena) {
 			 
-		     pokaz(nazwa).getCena();
-			 Gry.set(Gry.indexOf(pokaz (nazwa)), new Gra(nazwa,  nowaCena));
-			 pokaz(nazwa).wypiszGra();
+		     znajdzGre(nazwa).getCena();
+			 Gry.set(Gry.indexOf(znajdzGre (nazwa)), new Gra(nazwa,  nowaCena));
+			 znajdzGre(nazwa).wypiszGra();
 		 }
+}
 		 
 		 
 			 
-		 public void usunKsiazka(String autor) {
+		/* public void usunKsiazka(String autor) {
 			 Ksiazki.remove(znajdz(autor));
 			 
 		 }
@@ -154,5 +155,5 @@ public class Osoba {
 		
 		
 	}
-
+*/
 		
