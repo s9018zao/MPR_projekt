@@ -2,8 +2,10 @@ package MPR;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import ServicesProjectMPR.KsiazkaDBM;
-//import ServicesProjectMPR.OsobaDBM;
+import ServicesProjectMPR.OsobaDBM;
+
 
 
 public class Main  {
@@ -68,7 +70,14 @@ public class Main  {
 	Ksiazka ksiazka3 = new Ksiazka ("Tolkien", "2 Wieże", "49,00");
 	Kniga.DodajKsiazke(ksiazka3);
 	
-
+    OsobaDBM czlowiek = new OsobaDBM();
+    
+    Osoba pierwszy = new Osoba ("Bogdan", "Winiwski");
+	czlowiek.DodajOsobe(pierwszy);
+	Osoba drugi = new Osoba ("Andrzej", "Kancik");
+	czlowiek.DodajOsobe(drugi);
+	
+	
 	}	
 	
 }

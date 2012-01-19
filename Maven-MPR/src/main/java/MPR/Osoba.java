@@ -26,8 +26,30 @@ public class Osoba {
 			 this.Gry = Gry;
 			  }
 		 
-		
-		 public void wypiszWszystko(){
+ public Osoba (String imie, String nazwisko ) {
+			 
+			 this.Imie = imie;
+			 this.Nazwisko = nazwisko;
+			 	
+ }
+		 
+public String getImie() {
+	return Imie;
+}
+
+public void setImie(String imie) {
+	Imie = imie;
+}
+
+public String getNazwisko() {
+	return Nazwisko;
+}
+
+public void setNazwisko(String nazwisko) {
+	Nazwisko = nazwisko;
+}
+
+		public void wypiszWszystko(){
 			 
 			 System.out.println(""); 
 			 System.out.println("Książki :");

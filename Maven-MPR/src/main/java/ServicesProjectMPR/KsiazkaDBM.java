@@ -49,13 +49,9 @@ public class KsiazkaDBM {
 		")");
 		}
 		DodajKsiazkeStmt = conn.prepareStatement("" +"INSERT INTO Ksiazki (Autor, Tytul, Cena) VALUES (?,?,?)" +"");
-
 		PobierzKsiazkiStmt = conn.prepareStatement("" +"SELECT * FROM Ksiazki" +"");
-
 		ZnajdzKsiazkeByAutorStmt = conn.prepareStatement("SELECT * FROM Ksiazki WHERE Autor= ?");
-
 		UsunKsiazkeStmt = conn.prepareStatement("DELETE FROM Ksiazki WHERE ID = ?");
-
 		UsunWszystkieKsiazkiStmt = conn.prepareStatement("DELETE FROM Ksiazki");
 
 		} catch (SQLException e) {
