@@ -98,22 +98,22 @@ public class OsobaTest {
 	@Test
 	public void testZnajdz() {
 		
-		assertNotNull(Test.znajdz("autor2"));
-		assertNull(Test.znajdz("autor"));
+		assertNotNull(Test.znajdzKsiazke("autor2"));
+		assertNull(Test.znajdzKsiazke("autor"));
 	
 	}
 	@Test
 	public void testSzukaj() {
 		
-		assertNotNull(Test.szukaj("gazeta3"));
-		assertNull(Test.szukaj("gazeta"));
+		assertNotNull(Test.znajdzGazete("gazeta3"));
+		assertNull(Test.znajdzGazete("gazeta"));
 	}
 
 	@Test
 	public void testPokaz() {
 		
-		assertNotNull(Test.pokaz("gra1"));
-		assertNull(Test.pokaz("gra"));
+		assertNotNull(Test.znajdzGre("gra1"));
+		assertNull(Test.znajdzGre("gra"));
 	}
 
 	@Test
@@ -131,9 +131,9 @@ public class OsobaTest {
 		
 		Test.zmienGazete("gazeta2", "cena02");
 		
-		assertNotNull(Test.szukaj("gazeta2").getCena());
-		assertTrue(Test.szukaj("gazeta2").getCena().equals("cena02"));
-		assertFalse(Test.szukaj("gazeta2").getCena().equals("cena22"));
+		assertNotNull(Test.znajdzGazete("gazeta2").getCena());
+		assertTrue(Test.znajdzGazete("gazeta2").getCena().equals("cena02"));
+		assertFalse(Test.znajdzGazete("gazeta2").getCena().equals("cena22"));
 		
 	}
 
@@ -142,9 +142,9 @@ public class OsobaTest {
 		
 		Test.zmienKsiazke("tytul04","autor3","cena4");
 		
-		assertNull(Test.znajdz("autor5"));
-		assertTrue(Test.znajdz("autor3").getTytul().equals("tytul04"));
-		assertFalse(Test.znajdz("autor3").getTytul().equals("tytul44"));
+		assertNull(Test.znajdzKsiazke("autor5"));
+		assertTrue(Test.znajdzKsiazke("autor3").getTytul().equals("tytul04"));
+		assertFalse(Test.znajdzKsiazke("autor3").getTytul().equals("tytul44"));
 		
 		
 	}
@@ -154,9 +154,9 @@ public class OsobaTest {
 		
                 Test.zmienGre("gra1", "cena01");
 		
-		assertNotNull(Test.pokaz("gra1").getCena());
-		assertTrue(Test.pokaz("gra1").getCena().equals("cena01"));
-		assertFalse(Test.pokaz("gra1").getCena().equals("cena11"));
+		assertNotNull(Test.znajdzGre("gra1").getCena());
+		assertTrue(Test.znajdzGre("gra1").getCena().equals("cena01"));
+		assertFalse(Test.znajdzGre("gra1").getCena().equals("cena11"));
 		
 	}
 
@@ -165,7 +165,7 @@ public class OsobaTest {
 		
 		Test.usunKsiazka("autor3");
 		
-		assertNull(Test.znajdz("autor3"));
+		assertNull(Test.znajdzKsiazke("autor3"));
 		assertTrue(Ksiazki.size() == 3);
 	}
 
@@ -174,8 +174,8 @@ public class OsobaTest {
 		
 		Test.usunGazeta("gazeta1");
 		
-		assertNull(Test.szukaj("gazeta1"));
-		assertNotNull(Test.szukaj("gazeta2"));
+		assertNull(Test.znajdzGazete("gazeta1"));
+		assertNotNull(Test.znajdzGazete("gazeta2"));
 		assertTrue(Gazety.size() == 3);
 		
 	}
@@ -188,7 +188,7 @@ public class OsobaTest {
 		
 		assertTrue(Gry.size() == 2);
 		assertFalse(Gry.size() == 3);
-		assertNull(Test.pokaz("gra3"));
+		assertNull(Test.znajdzGre("gra3"));
 		
 	}
 

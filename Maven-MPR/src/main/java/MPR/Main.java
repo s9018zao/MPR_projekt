@@ -2,6 +2,9 @@ package MPR;
 
 import java.util.ArrayList;
 import java.util.List;
+import ServicesProjectMPR.KsiazkaDBM;
+//import ServicesProjectMPR.OsobaDBM;
+
 
 public class Main  {
 
@@ -33,7 +36,7 @@ public class Main  {
 	 System.out.println("**********Wypisanie list po usunięciu elementów**********");
      pierwsza.znajdzKsiazke("Kirst");
      pierwsza.znajdzGazete("Polityka");
-     //pierwsza.usunGra("Call of Duty");
+     pierwsza.usunGra("Call of Duty");
      pierwsza.znajdzGre("Call of Duty");
     		 
      pierwsza.wypiszWszystko();
@@ -49,7 +52,26 @@ public class Main  {
      
      
      
+
+/*---------------------------------------------------------------------------------
+|                          JDBM                                                     |
+-----------------------------------------------------------------------------------*/
+	
+	System.out.println(" ******************JDBC********************* ");
+	KsiazkaDBM  Kniga = new KsiazkaDBM ();
+	//Kniga.UsunWszystkieKsiazki();
+
+	Ksiazka ksiazka1 = new Ksiazka ("Lem", "Katar", "25,00");
+	Kniga.DodajKsiazke(ksiazka1);
+	Ksiazka ksiazka2 = new Ksiazka("Wharton", "Ptasiek", "19,00");
+	Kniga.DodajKsiazke(ksiazka2);
+	Ksiazka ksiazka3 = new Ksiazka ("Tolkien", "2 Wieże", "49,00");
+	Kniga.DodajKsiazke(ksiazka3);
+	
+
+	}	
+	
 }
-}
+
 
 

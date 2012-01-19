@@ -134,26 +134,27 @@ public class Osoba {
 			 Gry.set(Gry.indexOf(znajdzGre (nazwa)), new Gra(nazwa,  nowaCena));
 			 znajdzGre(nazwa).wypiszGra();
 		 }
-}
+
 		 
 		 
 			 
-		/* public void usunKsiazka(String autor) {
-			 Ksiazki.remove(znajdz(autor));
+		 public void usunKsiazka(String autor) {
+			 Ksiazki.remove(znajdzKsiazke(autor));
 			 
 		 }
 		 
 		 
 		public void usunGazeta(String tytul) {
-			 Gazety.remove(szukaj(tytul));
+			 Gazety.remove(znajdzGazete(tytul));
 		 }
 		 
 		
 		public void usunGra(String nazwa) {
-			 Gry.remove(pokaz(nazwa));
+			 Gry.remove(znajdzGre(nazwa));
 		 }
+		}
 		
 		
-	}
-*/
+	
+
 		
