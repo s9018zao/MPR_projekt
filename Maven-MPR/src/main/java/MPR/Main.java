@@ -60,23 +60,25 @@ public class Main  {
 -----------------------------------------------------------------------------------*/
 	
 	System.out.println(" ******************JDBC********************* ");
-	KsiazkaDBM  Kniga = new KsiazkaDBM ();
-	//Kniga.UsunWszystkieKsiazki();
-
-	Ksiazka ksiazka1 = new Ksiazka ("Lem", "Katar", "25,00");
-	Kniga.DodajKsiazke(ksiazka1);
-	Ksiazka ksiazka2 = new Ksiazka("Wharton", "Ptasiek", "19,00");
-	Kniga.DodajKsiazke(ksiazka2);
-	Ksiazka ksiazka3 = new Ksiazka ("Tolkien", "2 Wieże", "49,00");
-	Kniga.DodajKsiazke(ksiazka3);
 	
-    OsobaDBM czlowiek = new OsobaDBM();
-    
-    Osoba pierwszy = new Osoba ("Bogdan", "Winiwski");
+	
+	
+	OsobaDBM czlowiek = new OsobaDBM();
+	KsiazkaDBM  Kniga = new KsiazkaDBM ();
+	Kniga.UsunWszystkieKsiazki();
+	czlowiek.UsunWszystkieOsoby();
+	
+    Osoba pierwszy = new Osoba ("Bogdan", "Wisniewski");
 	czlowiek.DodajOsobe(pierwszy);
 	Osoba drugi = new Osoba ("Andrzej", "Kancik");
 	czlowiek.DodajOsobe(drugi);
 	
+	Ksiazka ksiazka1 = new Ksiazka ("Katar", "Lem", "25,00");
+	Kniga.DodajKsiazke(ksiazka1, czlowiek.ZnajdzOsobe("Wisniewski"));
+	Ksiazka ksiazka2 = new Ksiazka("Ptasiek", "Wharton", "19,00");
+	Kniga.DodajKsiazke(ksiazka2, czlowiek.ZnajdzOsobe("Wisniewski"));
+	Ksiazka ksiazka3 = new Ksiazka ("2 Wieze", "Tolkien", "49,00");
+	Kniga.DodajKsiazke(ksiazka3 ,czlowiek.ZnajdzOsobe("Wisniewski"));
 	
 	}	
 	
